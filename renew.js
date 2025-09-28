@@ -8,11 +8,6 @@ const { chromium } = require("playwright");
   const EMAIL = process.env.GH_EMAIL;
   const PASSWORD = process.env.GH_PASSWORD;
 
-  if (!CONTRACT_URL || !EMAIL || !PASSWORD) {
-    console.error("❌ 缺少必要的环境变量 (GH_CONTRACT_URL / GH_EMAIL / GH_PASSWORD)");
-    process.exit(1);
-  }
-
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
